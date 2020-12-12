@@ -16,12 +16,11 @@ spec:
   install:
     remediation:
       retries: 3
-  valuesFrom:
-    - kind: ConfigMap
-      name: redis-values
   values:
     usePassword: true
   valuesFrom:
+    - kind: ConfigMap
+      name: redis-values
     - kind: Secret
       name: redis-auth
       valuesKey: password
